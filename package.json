@@ -1,0 +1,9 @@
+{
+  "name": "tiled-scripts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@mapeditor/tiled-api": "^1.11.0",
+    "typescript": "^5.5.4"
+  }
+}
