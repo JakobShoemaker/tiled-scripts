@@ -55,7 +55,7 @@ const countSelectedTiles = tiled.registerAction(
       countSelectedTilesInLayer(layer);
     }
 
-    let lines = ["Selected tile counts:"];
+    let lines = [];
 
     for (const [tileId, counts] of tileCounts) {
       let sum = 0;
@@ -66,14 +66,16 @@ const countSelectedTiles = tiled.registerAction(
         countStrings.push(`${layerNames[layerId]}: ${count}`);
       }
 
-      let str = `[${tileId}]: ${sum}`;
       if (sum) {
-        str += ` [${countStrings.join(", ")}]`;
+        lines.push(`[${tileId}]: ${sum} [${countStrings.join(", ")}]`);
       }
-      lines.push(str);
     }
 
-    tiled.alert(lines.join("\n"));
+    tiled.alert(
+      lines.length > 0
+        ? `Selected tile counts:\n${lines.join("\n")}`
+        : "No tiles found."
+    );
   }
 );
 
