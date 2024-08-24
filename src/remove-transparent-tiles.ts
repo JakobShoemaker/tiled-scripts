@@ -60,6 +60,8 @@ const removeTransparentTiles = tiled.registerAction(
             }
           }
         }
+
+        layerEdit.apply();
       } else if (isGroupLayer(layer)) {
         for (const childLayer of layer.layers) {
           removeTransparentTilesInLayer(childLayer);
