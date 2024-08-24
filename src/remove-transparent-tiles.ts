@@ -26,13 +26,13 @@ const removeTransparentTiles = tiled.registerAction(
       return true;
     }
 
-    const transparentTiles = new Map<Tileset, number[]>();
+    const transparentTiles = new Map<Tileset, Set<number>>();
     for (const tileset of map.tilesets) {
-      const tiles: number[] = [];
+      const tiles: Set<number> = new Set();
 
       for (const tile of tileset.tiles) {
         if (isTransparentTile(tile)) {
-          tiles.push(tile.id);
+          tiles.add(tile.id);
         }
       }
 
@@ -53,7 +53,7 @@ const removeTransparentTiles = tiled.registerAction(
         for (let x = region.x; x < xBoundary; ++x) {
           for (let y = region.y; y < yBoundary; ++y) {
             const tile = layer.tileAt(x, y);
-            if (tile && transparentTiles.get(tile.tileset)?.includes(tile.id)) {
+            if (tile && transparentTiles.get(tile.tileset)?.has(tile.id)) {
               layerEdit.setTile(x, y, null);
               editedLayers.add(layer.name);
               ++removedTilesCount;
