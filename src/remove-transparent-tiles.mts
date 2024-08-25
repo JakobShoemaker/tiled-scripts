@@ -1,3 +1,5 @@
+import { isGroupLayer, isTileLayer, isTileMap } from "./type-guards.mjs";
+
 const removeTransparentTiles = tiled.registerAction(
   "RemoveTransparentTiles",
   function (action) {

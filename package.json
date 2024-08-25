@@ -2,8 +2,13 @@
   "name": "tiled-scripts",
   "version": "1.0.0",
   "license": "MIT",
+  "scripts": {
+    "compile": "swc src --out-dir dist --strip-leading-paths --out-file-extension mjs"
+  },
   "devDependencies": {
     "@mapeditor/tiled-api": "^1.11.0",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.7.18",
     "typescript": "^5.5.4"
   }
 }

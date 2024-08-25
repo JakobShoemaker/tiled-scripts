@@ -1,3 +1,5 @@
+import { isGroupLayer, isTileLayer, isTileMap } from "./type-guards.mjs";
+
 const countSelectedTiles = tiled.registerAction(
   "CountSelectedTiles",
   function (action) {

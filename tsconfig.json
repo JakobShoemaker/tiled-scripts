@@ -3,8 +3,8 @@
     "lib": [
       "ES2016"
     ],
-    "module": "ES2015",
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "outDir": "dist",
     "strict": true,
     "target": "ES2016",
@@ -13,6 +13,6 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.mts"
   ]
 }
