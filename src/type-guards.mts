@@ -1,23 +1,23 @@
-export function isTileMap(asset: Asset): asset is TileMap {
-  return asset && asset.isTileMap;
+export function isTileMap(asset: Asset | null): asset is TileMap {
+  return asset !== null && asset.isTileMap;
 }
 
-export function isTileset(asset: Asset): asset is Tileset {
-  return asset && asset.isTileset;
+export function isTileset(asset: Asset | null): asset is Tileset {
+  return asset !== null && asset.isTileset;
 }
 
-export function isGroupLayer(layer: Layer): layer is GroupLayer {
-  return layer && layer.isGroupLayer;
+export function isGroupLayer(layer: Layer | null): layer is GroupLayer {
+  return layer !== null && layer.isGroupLayer;
 }
 
-export function isImageLayer(layer: Layer): layer is ImageLayer {
-  return layer && layer.isImageLayer;
+export function isImageLayer(layer: Layer | null): layer is ImageLayer {
+  return layer !== null && layer.isImageLayer;
 }
 
-export function isObjectLayer(layer: Layer): layer is ObjectGroup {
-  return layer && layer.isObjectLayer;
+export function isObjectLayer(layer: Layer | null): layer is ObjectGroup {
+  return layer !== null && layer.isObjectLayer;
 }
 
-export function isTileLayer(layer: Layer): layer is TileLayer {
-  return layer && layer.isTileLayer;
+export function isTileLayer(layer: Layer | null): layer is TileLayer {
+  return layer !== null && layer.isTileLayer;
 }
